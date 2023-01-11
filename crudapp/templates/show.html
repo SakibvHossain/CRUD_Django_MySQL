@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <title>
+
+        </title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <table class="table table-border table-bordered text-center shadow">
+                <tr>
+                    <th>User ID</th>
+                    <th>User Name</th>
+                    <th>User Email</th>
+                    <th>User Password</th>
+                    <th>User Delete</th>
+                    <th>User Edit</th>
+                </tr>
+                {% for user in users %}
+                <tr>
+                    <td>{{user.id}}</td>
+                    <td>{{user.uname}}</td>
+                    <td>{{user.uemail}}</td>
+                    <td>{{user.upassword}}</td>
+                    <td><a href="/delete/{{user.id}}" class="btn btn-danger btn-sm">Delete</a></td>
+                    <td><a href="/edit/{{user.id}}" class="btn btn-success btn-sm">Edit</a></td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </body>
+</html>
